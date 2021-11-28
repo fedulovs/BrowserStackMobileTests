@@ -27,12 +27,12 @@ public class Attach {
         return ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
     }
 
-    @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
-    public static String attachVideo(String sessionId) {
-        return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
-                + Browserstack.videoUrl(sessionId)
-                + "' type='video/mp4'></video></body></html>";
-    }
+//    @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
+//    public static String attachVideo(String sessionId) {
+//        return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
+//                + Browserstack.videoUrl(sessionId)
+//                + "' type='video/mp4'></video></body></html>";
+//    }
 
     public static String getSessionId() {
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
