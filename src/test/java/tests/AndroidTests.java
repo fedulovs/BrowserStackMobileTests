@@ -28,16 +28,15 @@ public class AndroidTests extends TestBase {
     @Test
     @DisplayName("Successful search in wikipedia android app")
     void openBookmarksTest() {
-        step("Type search", () -> {
+        step("Open bookmarks page", () -> {
             $(MobileBy.AccessibilityId("My lists")).click();
         });
+        step("Assert empty list displayed", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/empty_title")).isDisplayed();
+            $(MobileBy.id("org.wikipedia.alpha:id/empty_image")).isDisplayed();
+            $(MobileBy.id("org.wikipedia.alpha:id/empty_messagee")).isDisplayed();
+        });
     }
-
-
-    //org.wikipedia.alpha:id/empty_title
-    //org.wikipedia.alpha:id/empty_image
-    //org.wikipedia.alpha:id/empty_message
-
 
 //    @Test
 //    @DisplayName("Successful search in wikipedia android app")
