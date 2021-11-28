@@ -9,7 +9,6 @@ public class Browserstack {
                 .when()
                 .get("https://api-cloud.browserstack.com/app-automate/sessions/" + sessionId +".json")
                 .then()
-                .statusCode(200)
                 .log().body()
                 .extract()
                 .response()
