@@ -9,13 +9,9 @@ public class Browserstack {
 
     public static CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
 
-    String login = config.login();
-    String password = config.pass();
-
-
     public static String videoUrl(String sessionId) {
         return given()
-                .auth().basic("qaguru3", "PDQAwqS6GqzeNLqsj92r")
+                .auth().basic(config.login(), config.pass())
                 .when()
                 .get("https://api-cloud.browserstack.com/app-automate/sessions/" + sessionId +".json")
                 .then()
