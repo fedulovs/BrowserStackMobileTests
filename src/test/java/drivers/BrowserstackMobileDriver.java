@@ -14,8 +14,8 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
 
     public static CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
 
-    String login = config.login();
-    String pass = config.pass();
+    String userName = config.userName();
+    String key = config.accessKey();
 
     public static URL getBrowserstackUrl() {
         try {
@@ -29,8 +29,8 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
 
         // Set your access credentials
-        desiredCapabilities.setCapability("browserstack.user", "heaven_TeYz4a");
-        desiredCapabilities.setCapability("browserstack.key", "ypaQu2sDo1TXbUdS9mb5");
+        desiredCapabilities.setCapability("browserstack.user", userName);
+        desiredCapabilities.setCapability("browserstack.key", key);
 
         // Set URL of the application under test
         desiredCapabilities.setCapability("app", "bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c");

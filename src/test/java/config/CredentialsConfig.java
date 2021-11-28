@@ -6,4 +6,6 @@ import org.aeonbits.owner.Config;
 public interface CredentialsConfig extends Config {
     String login();
     String pass();
+    String userName();
+    String accessKey();
 }
