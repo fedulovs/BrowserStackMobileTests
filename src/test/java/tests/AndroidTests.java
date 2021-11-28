@@ -26,7 +26,7 @@ public class AndroidTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Successful search in wikipedia android app")
+    @DisplayName("Check if bookmark page has empty placeholder")
     void openBookmarksTest() {
         step("Open bookmarks page", () -> {
             $(MobileBy.AccessibilityId("My lists")).click();
@@ -38,19 +38,20 @@ public class AndroidTests extends TestBase {
         });
     }
 
-//    @Test
-//    @DisplayName("Successful search in wikipedia android app")
-//    void settingsTest() {
-//        step("Open dropdown", () -> {
-//            $(MobileBy.id("org.wikipedia.alpha:id/menu_overflow_button")).click();
-//        });
-//        step("Click on settings button", () ->
-//                $(MobileBy.id("org.wikipedia.alpha:id/explore_overflow_settings")).click());
-//
-//        step("Check that settings screen is opened", () ->
-//                $(MobileBy.className("android.widget.TextView")).shouldHave());
-//
-//        step("Check that settings screen is opened", () ->
-//                $(MobileBy.id("org.wikipedia.alpha:id/action_bar")).$(Selectors.ByText("13"))).shouldBe(Condition.visible);
-//    }
+    @Test
+    @DisplayName("Check if tab bar is displayed")
+    void openMainPageTest() {
+        step("Assert Explore tab is present", () -> {
+            $(MobileBy.id("Explore")).isDisplayed();
+        });
+        step("Assert My lists tab is present", () -> {
+            $(MobileBy.id("My lists")).isDisplayed();
+        });
+        step("Assert Explore tab is present", () -> {
+            $(MobileBy.id("History")).isDisplayed();
+        });
+        step("Assert Explore tab is present", () -> {
+            $(MobileBy.id("Nearby")).isDisplayed();
+        });
+    }
 }
