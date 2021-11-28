@@ -15,7 +15,7 @@ public class Browserstack {
         String pass = config.pass();
 
         return given()
-                .auth().basic(login, pass)
+                .auth().basic("qaguru3", "PDQAwqS6GqzeNLqsj92r")
                 .when()
                 .get("https://api-cloud.browserstack.com/app-automate/sessions/" + sessionId +".json")
                 .then()
